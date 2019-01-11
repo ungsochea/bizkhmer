@@ -9,7 +9,7 @@
         <div class="post-block-style post-grid clearfix">
           <div class="post-thumb">
             <router-link :to="`/${post.path}`" tag="a">
-                <img class="img-responsive" :src='post.image' alt>
+                <img class="img-responsive" :src="post.image||'default.jpg'" :alt="post.title">
             </router-link>
             <!-- <a href="#">
               <img class="img-responsive" :src='post.image' alt>
