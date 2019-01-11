@@ -9,6 +9,15 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import moment from 'moment';
+Vue.filter('myDate',function(publisher){
+    return moment(publisher).locale('km').format('LLLL')
+})
+
+Vue.filter('dateNowKH',function(){
+    return moment().format('MMMM Do YYYY, h:mm:ss a'); // មករា ទី៩ ២០១៩, ៩:៤១:៤៩ ល្ងាច
+})
+
 
 
 
@@ -22,7 +31,7 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-Vue.component('app-home', require('./components/home/AppHome.vue').default);
+Vue.component('app-main', require('./components/home/AppMain.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 

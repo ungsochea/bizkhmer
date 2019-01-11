@@ -66,4 +66,7 @@ class CategoryController extends Controller
     {
         //
     }
+    public function getName($slug){
+        return Category::where('slug',$slug)->first()->name;
+    }
 }

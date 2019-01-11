@@ -68,7 +68,7 @@ export default {
 
 <style>
 ul.navbar-nav > li > a{
-	font-family: 'Kdam Thmor', cursive;
+	font-family: 'Kdam Thmor', sans-serif;
 	font-size: 18px;
 }
 

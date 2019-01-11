@@ -1,13 +1,31 @@
 <template>
-    <h1>Category</h1>
+    <!-- <h1>Category ser {{ $route.params.slug }}</h1> -->
+   <section class="block-wrapper">
+      <div class="container">
+        <div class="row">
+          <!-- Content Area -->
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <!-- {{ $route.params.slug }} -->
+            <blog-category></blog-category>
+          </div>
+          <!-- Right Sidebar Area -->
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <side-bar></side-bar>
+          </div>
+        </div>
+      </div>
+    </section>
 </template>
 
 <script>
+import SideBar from "./blog/SideBar";
+import BlogCategory from "./blog/BlogCategory";
 export default {
+    components:{SideBar,BlogCategory},
     data(){
         return{
-            datas:this.$route.params.slug,
-            // datas:'ok'
+            
+            posts1:{}
         }
     },
     created(){
@@ -19,7 +37,7 @@ export default {
     methods:{
         asyncData(){
             axios.get(`/api/category/${this.$route.params.slug}`)
-            .then(res=>console.log(res.data))
+            .then(res=>this.posts1=res.data)
         }
     }
 }

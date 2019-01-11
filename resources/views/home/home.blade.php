@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> --}}
 	<!-- Template styles-->
-	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" scoped>
 	<!-- Responsive styles-->
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 	<!-- FontAwesome -->
@@ -31,7 +31,7 @@
 </head>
 <body>
     <div id="app" class="body-inner">
-        <app-home></app-home>        
+        <app-main></app-main>        
     </div> 
 </body>
 
