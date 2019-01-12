@@ -20,6 +20,7 @@ class PostDetailResource extends JsonResource
             'thumbnail'=>$this->image,
             'published'=>$this->published_at,
             'category'=>$this->category(),
+            'content'=>$this->content,
         ];
     }
 }

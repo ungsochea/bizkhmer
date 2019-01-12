@@ -32,7 +32,7 @@
                 </a>
               </span> -->
             </div>
-            <p>{{post.excerpt}}</p>
+            <p v-html="`${post.excerpt}`"></p>
           </div>
           <!-- Post content end -->
         </div>
@@ -41,7 +41,7 @@
       <!-- Col 1 end -->
      
     </div>
-    <!-- Row end -->
+    <!-- Row end --> 
   </div>
   <!-- Block Lifestyle end -->
 </template>
@@ -97,6 +97,13 @@ export default {
 }
 .category-listing .post-block-style .post-content p{
     font-family: 'Odor Mean Chey',sans-serif;
-    font-size: 14px;
+    font-size: 13px;
+    color: #777777;
+    font-style: normal;
 }
+/* .post-content>p{
+  font-style: normal;
+  color: #777777;
+    font-size: 13px;
+} */
 </style>

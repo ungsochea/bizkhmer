@@ -34,7 +34,7 @@
                     <a href="#">John Doe</a>
                   </span>
                   <span class="post-date">
-                    <i class="fa fa-clock-o"></i> March 14, 2017
+                    <i class="fa fa-clock-o"></i> {{post.published|myDate }}
                   </span>
                   <span class="post-hits">
                     <i class="fa fa-eye"></i> 21
@@ -50,39 +50,14 @@
               <!-- Post title end -->
 			  <hr/>
               <div class="post-media post-featured-image">
-                <img src="/assets/images/news/lifestyle/food1.jpg" class="img-responsive" alt>
+                <img style="width: 100%;max-height: 400px;" :src="post.thumbnail||'default.jpg'" :alt="post.title" class="img-responsive" >
+                <!-- src="/assets/images/news/lifestyle/food1.jpg"  -->
               </div>
 
               <div class="post-content-area">
                 <div class="entry-content">
-                  <p>
-                    <span class="dropcap">T</span> ityful a rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.
-                  </p>
-
-                  <blockquote>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence.</blockquote>
-
-                  <p>Lo-fi cred gastropub, brunch aliquip stumptown culpa. Banh mi eiusmod tattooed, freegan Schlitz master cleanse pug. Eu 8-bit id PBR Pinterest taxidermy, swag church-key Echo Park commodo yr. Adipisicing leggings enim laboris wayfarers, cliche Carles placeat typewriter mixtape cold-pressed. Etsy Pitchfork Austin, selvage beard reprehenderit ea ugh.</p>
-
-                  <h3>When, while the lovely valley teems with vapour around me, and the meridian sun strikes.</h3>
-
-                  <p>
-                    <img
-                      class="pull-left"
-                      src="/assets/images/news/news-details/news-details2.jpg"
-                      alt
-                    >
-                  </p>
-                  <p>Pitchfork kitsch plaid forage aliquip, sustainable taxidermy deserunt health goth stumptown cred VHS butcher. Mixtape fap Intelligentsia small batch placeat labore, bitters swag chia Echo Park. Four loko aliquip id, delectus beard Bushwick bespoke Blue Bottle eu keytar veniam ethical High Life pour-over.</p>
-                  <p>Art party photo booth deserunt exercitation plaid squid. Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby chic. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby Velit non seitan, tilde art party minim Thundercats viral. Farm-to-table selfies labore, leggings cupidatat sunt taxidermy umami fanny pack typewriter hoodie art party voluptate cardigan banjo. Listicle paleo, drinking vinegar sint direct trade vegan 3 wolf moon.</p>
-                  <h3>Farm-to-table selfies labore leggings:</h3>
-                  <ul>
-                    <li>Plaid fashion axe semiotics skateboard</li>
-                    <li>Mixtape fap Intelligentsia small batch placeat labore</li>
-                    <li>Gleams steal into the inner sanctuary grow</li>
-                    <li>Like these sweet mornings of spring which</li>
-                  </ul>
-                  <p>High Life tempor retro Truffaut. Tofu mixtape twee, assumenda quinoa flexitarian aesthetic artisan vinyl pug. Chambray et Carles Thundercats cardigan actually, magna bicycle rights. Plaid fashion axe semiotics skateboard, try-hard food truck aesthetic biodiesel exercitation. Accusamus VHS Wes Anderson Banksy food truck vero.</p>
-                </div>
+                  <span v-html="`${post.content}`"></span>
+                 </div>
                 <!-- Entery content end -->
                 <div class="tags-area clearfix">
                   <div class="post-tags">
@@ -191,5 +166,10 @@ export default {
     line-height: 40px;
     padding: 3px 0 8px 0;
     margin: 0;
+}
+.entry-content{
+  font-size: 14px;
+  font-family: 'Kantumruy', sans-serif;
+  line-height:24px;
 }
 </style>

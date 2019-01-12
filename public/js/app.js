@@ -2831,31 +2831,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -7482,7 +7457,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.post-title.title-large{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 16px;\n    color: #333;\n    font-weight: 700;\n    line-height: 26px;\n}\n.post-title.title-large a:hover{\n    color: #ec0000;\n    text-decoration: none;\n}\n.post-date{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 10px;\n}\n.category-listing .post-block-style .post-content p{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n.post-title.title-large{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 16px;\n    color: #333;\n    font-weight: 700;\n    line-height: 26px;\n}\n.post-title.title-large a:hover{\n    color: #ec0000;\n    text-decoration: none;\n}\n.post-date{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 10px;\n}\n.category-listing .post-block-style .post-content p{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 13px;\n    color: #777777;\n    font-style: normal;\n}\n/* .post-content>p{\n  font-style: normal;\n  color: #777777;\n    font-size: 13px;\n} */\n", ""]);
 
 // exports
 
@@ -7539,7 +7514,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n.entry-content{\n  font-size: 14px;\n  font-family: 'Kantumruy', sans-serif;\n  line-height:24px;\n}\n", ""]);
 
 // exports
 
@@ -57331,7 +57306,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(post.excerpt))])
+              _c("p", { domProps: { innerHTML: _vm._s("" + post.excerpt) } })
             ])
           ])
         ])
@@ -57807,14 +57782,48 @@ var render = function() {
                   _vm._v(_vm._s(_vm.post.title))
                 ]),
                 _vm._v(" "),
-                _vm._m(1)
+                _c("div", { staticClass: "post-meta" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "post-date" }, [
+                    _c("i", { staticClass: "fa fa-clock-o" }),
+                    _vm._v(
+                      " " +
+                        _vm._s(_vm._f("myDate")(_vm.post.published)) +
+                        "\n                  "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ])
               ]),
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _vm._m(2),
+              _c("div", { staticClass: "post-media post-featured-image" }, [
+                _c("img", {
+                  staticClass: "img-responsive",
+                  staticStyle: { width: "100%", "max-height": "400px" },
+                  attrs: {
+                    src: _vm.post.thumbnail || "default.jpg",
+                    alt: _vm.post.title
+                  }
+                })
+              ]),
               _vm._v(" "),
-              _vm._m(3)
+              _c("div", { staticClass: "post-content-area" }, [
+                _c("div", { staticClass: "entry-content" }, [
+                  _c("span", {
+                    domProps: { innerHTML: _vm._s("" + _vm.post.content) }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _vm._m(5)
+              ])
             ])
           ]),
           _vm._v(" "),
@@ -57843,28 +57852,29 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "post-meta" }, [
-      _c("span", { staticClass: "post-author" }, [
-        _vm._v("By\n                    "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("John Doe")])
-      ]),
+    return _c("span", { staticClass: "post-author" }, [
+      _vm._v("By\n                    "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("John Doe")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "post-hits" }, [
+      _c("i", { staticClass: "fa fa-eye" }),
+      _vm._v(" 21\n                  ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "post-comment" }, [
+      _c("i", { staticClass: "fa fa-comments-o" }),
       _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [
-        _c("i", { staticClass: "fa fa-clock-o" }),
-        _vm._v(" March 14, 2017\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-hits" }, [
-        _c("i", { staticClass: "fa fa-eye" }),
-        _vm._v(" 21\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-comment" }, [
-        _c("i", { staticClass: "fa fa-comments-o" }),
-        _vm._v(" "),
-        _c("a", { staticClass: "comments-link", attrs: { href: "#" } }, [
-          _c("span", [_vm._v("01")])
-        ])
+      _c("a", { staticClass: "comments-link", attrs: { href: "#" } }, [
+        _c("span", [_vm._v("01")])
       ])
     ])
   },
@@ -57872,138 +57882,54 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "post-media post-featured-image" }, [
-      _c("img", {
-        staticClass: "img-responsive",
-        attrs: { src: "/assets/images/news/lifestyle/food1.jpg", alt: "" }
-      })
+    return _c("div", { staticClass: "tags-area clearfix" }, [
+      _c("div", { staticClass: "post-tags" }, [
+        _c("span", [_vm._v("Tags:")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("# Food")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("# Lifestyle")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("# Travel")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "post-content-area" }, [
-      _c("div", { staticClass: "entry-content" }, [
-        _c("p", [
-          _c("span", { staticClass: "dropcap" }, [_vm._v("T")]),
-          _vm._v(
-            " ityful a rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.\n                  "
-          )
+    return _c("div", { staticClass: "share-items clearfix" }, [
+      _c("ul", { staticClass: "post-social-icons unstyled" }, [
+        _c("li", { staticClass: "facebook" }, [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-facebook" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "ts-social-title" }, [_vm._v("Facebook")])
+          ])
         ]),
         _vm._v(" "),
-        _c("blockquote", [
-          _vm._v(
-            "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence."
-          )
+        _c("li", { staticClass: "twitter" }, [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-twitter" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "ts-social-title" }, [_vm._v("Twitter")])
+          ])
         ]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lo-fi cred gastropub, brunch aliquip stumptown culpa. Banh mi eiusmod tattooed, freegan Schlitz master cleanse pug. Eu 8-bit id PBR Pinterest taxidermy, swag church-key Echo Park commodo yr. Adipisicing leggings enim laboris wayfarers, cliche Carles placeat typewriter mixtape cold-pressed. Etsy Pitchfork Austin, selvage beard reprehenderit ea ugh."
-          )
+        _c("li", { staticClass: "gplus" }, [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-google-plus" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "ts-social-title" }, [_vm._v("Google +")])
+          ])
         ]),
         _vm._v(" "),
-        _c("h3", [
-          _vm._v(
-            "When, while the lovely valley teems with vapour around me, and the meridian sun strikes."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _c("img", {
-            staticClass: "pull-left",
-            attrs: {
-              src: "/assets/images/news/news-details/news-details2.jpg",
-              alt: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Pitchfork kitsch plaid forage aliquip, sustainable taxidermy deserunt health goth stumptown cred VHS butcher. Mixtape fap Intelligentsia small batch placeat labore, bitters swag chia Echo Park. Four loko aliquip id, delectus beard Bushwick bespoke Blue Bottle eu keytar veniam ethical High Life pour-over."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Art party photo booth deserunt exercitation plaid squid. Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby chic. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby Velit non seitan, tilde art party minim Thundercats viral. Farm-to-table selfies labore, leggings cupidatat sunt taxidermy umami fanny pack typewriter hoodie art party voluptate cardigan banjo. Listicle paleo, drinking vinegar sint direct trade vegan 3 wolf moon."
-          )
-        ]),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Farm-to-table selfies labore leggings:")]),
-        _vm._v(" "),
-        _c("ul", [
-          _c("li", [_vm._v("Plaid fashion axe semiotics skateboard")]),
-          _vm._v(" "),
-          _c("li", [
-            _vm._v("Mixtape fap Intelligentsia small batch placeat labore")
-          ]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Gleams steal into the inner sanctuary grow")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Like these sweet mornings of spring which")])
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "High Life tempor retro Truffaut. Tofu mixtape twee, assumenda quinoa flexitarian aesthetic artisan vinyl pug. Chambray et Carles Thundercats cardigan actually, magna bicycle rights. Plaid fashion axe semiotics skateboard, try-hard food truck aesthetic biodiesel exercitation. Accusamus VHS Wes Anderson Banksy food truck vero."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "tags-area clearfix" }, [
-        _c("div", { staticClass: "post-tags" }, [
-          _c("span", [_vm._v("Tags:")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("# Food")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("# Lifestyle")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("# Travel")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "share-items clearfix" }, [
-        _c("ul", { staticClass: "post-social-icons unstyled" }, [
-          _c("li", { staticClass: "facebook" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fa fa-facebook" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ts-social-title" }, [
-                _vm._v("Facebook")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "twitter" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fa fa-twitter" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ts-social-title" }, [
-                _vm._v("Twitter")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "gplus" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fa fa-google-plus" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ts-social-title" }, [
-                _vm._v("Google +")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "pinterest" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fa fa-pinterest" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ts-social-title" }, [
-                _vm._v("Pinterest")
-              ])
+        _c("li", { staticClass: "pinterest" }, [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-pinterest" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "ts-social-title" }, [
+              _vm._v("Pinterest")
             ])
           ])
         ])
