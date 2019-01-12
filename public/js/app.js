@@ -2829,18 +2829,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     SideBar: _SideBar__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  date: function date() {
+  data: function data() {
     return {
-      category: 'loading..'
+      category: {
+        name: "",
+        slug: ""
+      },
+      post: {
+        title: "",
+        content: ""
+      }
     };
   },
   created: function created() {
-    this.category();
+    this.cat_title();
+    this.get_post();
   },
   methods: {
     cat_title: function cat_title() {
@@ -2848,6 +2883,13 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/category-name/".concat(this.$route.params.category)).then(function (res) {
         return _this.category = res.data;
+      });
+    },
+    get_post: function get_post() {
+      var _this2 = this;
+
+      axios.get("/api/posts/".concat(this.$route.params.post)).then(function (res) {
+        return _this2.post = res.data.data;
       });
     }
   }
@@ -7497,7 +7539,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.breadcrumb {\n    color: #777;\n    margin: 0px 0 -10px 0;\n    padding: 0;\n    background: none;\n    list-style: none;\n    border-radius: 4px;\n}\n.breadcrumb>li{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -57237,7 +57279,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "block category-listing color-blue" }, [
     _c("h3", { staticClass: "block-title" }, [
-      _c("span", [_vm._v(_vm._s(this.category))])
+      _c("span", [_vm._v(_vm._s(this.category.name))])
     ]),
     _vm._v(" "),
     _c(
@@ -57734,16 +57776,21 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-sm-12" }, [
             _c("ol", { staticClass: "breadcrumb" }, [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
                 "li",
                 [
-                  _c("router-link", { attrs: { tag: "a", to: "/" } }, [
-                    _vm._v("ទំព័រដើម")
-                  ])
+                  _c(
+                    "router-link",
+                    {
+                      attrs: { tag: "a", to: "/category/" + _vm.category.slug }
+                    },
+                    [_vm._v(_vm._s(_vm.category.name))]
+                  )
                 ],
                 1
-              ),
-              _c("li", [_c("a", [_vm._v(_vm._s(this.category))])])
+              )
             ])
           ])
         ])
@@ -57753,7 +57800,23 @@ var render = function() {
     _c("section", { staticClass: "block-wrapper" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "col-lg-8 col-md-8 col-sm-12 col-xs-12" }, [
+            _c("div", { staticClass: "single-post" }, [
+              _c("div", { staticClass: "post-title-area" }, [
+                _c("h2", { staticClass: "post-title" }, [
+                  _vm._v(_vm._s(_vm.post.title))
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3)
+            ])
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -57771,174 +57834,175 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-8 col-md-8 col-sm-12 col-xs-12" }, [
-      _c("div", { staticClass: "single-post" }, [
-        _c("div", { staticClass: "post-media post-featured-image" }, [
+    return _c("li", [
+      _c("a", { attrs: { href: "/" } }),
+      _vm._v("ទំព័រដើម\n              ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "post-meta" }, [
+      _c("span", { staticClass: "post-author" }, [
+        _vm._v("By\n                    "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("John Doe")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "post-date" }, [
+        _c("i", { staticClass: "fa fa-clock-o" }),
+        _vm._v(" March 14, 2017\n                  ")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "post-hits" }, [
+        _c("i", { staticClass: "fa fa-eye" }),
+        _vm._v(" 21\n                  ")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "post-comment" }, [
+        _c("i", { staticClass: "fa fa-comments-o" }),
+        _vm._v(" "),
+        _c("a", { staticClass: "comments-link", attrs: { href: "#" } }, [
+          _c("span", [_vm._v("01")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "post-media post-featured-image" }, [
+      _c("img", {
+        staticClass: "img-responsive",
+        attrs: { src: "/assets/images/news/lifestyle/food1.jpg", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "post-content-area" }, [
+      _c("div", { staticClass: "entry-content" }, [
+        _c("p", [
+          _c("span", { staticClass: "dropcap" }, [_vm._v("T")]),
+          _vm._v(
+            " ityful a rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.\n                  "
+          )
+        ]),
+        _vm._v(" "),
+        _c("blockquote", [
+          _vm._v(
+            "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lo-fi cred gastropub, brunch aliquip stumptown culpa. Banh mi eiusmod tattooed, freegan Schlitz master cleanse pug. Eu 8-bit id PBR Pinterest taxidermy, swag church-key Echo Park commodo yr. Adipisicing leggings enim laboris wayfarers, cliche Carles placeat typewriter mixtape cold-pressed. Etsy Pitchfork Austin, selvage beard reprehenderit ea ugh."
+          )
+        ]),
+        _vm._v(" "),
+        _c("h3", [
+          _vm._v(
+            "When, while the lovely valley teems with vapour around me, and the meridian sun strikes."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
           _c("img", {
-            staticClass: "img-responsive",
-            attrs: { src: "/assets/images/news/lifestyle/food1.jpg", alt: "" }
+            staticClass: "pull-left",
+            attrs: {
+              src: "/assets/images/news/news-details/news-details2.jpg",
+              alt: ""
+            }
           })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "post-title-area" }, [
-          _c("a", { staticClass: "post-cat", attrs: { href: "#" } }, [
-            _vm._v("Food")
-          ]),
-          _vm._v(" "),
-          _c("h2", { staticClass: "post-title" }, [
-            _vm._v(
-              "\n\t\t\t\t \t\t\t\tTacos ditched the naked chicken chalupa, so here's how to make your own\n\t\t\t\t \t\t\t"
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "post-meta" }, [
-            _c("span", { staticClass: "post-author" }, [
-              _vm._v("\n\t\t\t\t\t\t\t\t\tBy "),
-              _c("a", { attrs: { href: "#" } }, [_vm._v("John Doe")])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "post-date" }, [
-              _c("i", { staticClass: "fa fa-clock-o" }),
-              _vm._v(" March 14, 2017")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "post-hits" }, [
-              _c("i", { staticClass: "fa fa-eye" }),
-              _vm._v(" 21")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "post-comment" }, [
-              _c("i", { staticClass: "fa fa-comments-o" }),
-              _vm._v(" "),
-              _c("a", { staticClass: "comments-link", attrs: { href: "#" } }, [
-                _c("span", [_vm._v("01")])
-              ])
-            ])
-          ])
+        _c("p", [
+          _vm._v(
+            "Pitchfork kitsch plaid forage aliquip, sustainable taxidermy deserunt health goth stumptown cred VHS butcher. Mixtape fap Intelligentsia small batch placeat labore, bitters swag chia Echo Park. Four loko aliquip id, delectus beard Bushwick bespoke Blue Bottle eu keytar veniam ethical High Life pour-over."
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "post-content-area" }, [
-          _c("div", { staticClass: "entry-content" }, [
-            _c("p", [
-              _c("span", { staticClass: "dropcap" }, [_vm._v("T")]),
-              _vm._v(
-                " ityful a rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane."
-              )
-            ]),
-            _vm._v(" "),
-            _c("blockquote", [
-              _vm._v(
-                "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Lo-fi cred gastropub, brunch aliquip stumptown culpa. Banh mi eiusmod tattooed, freegan Schlitz master cleanse pug. Eu 8-bit id PBR Pinterest taxidermy, swag church-key Echo Park commodo yr. Adipisicing leggings enim laboris wayfarers, cliche Carles placeat typewriter mixtape cold-pressed. Etsy Pitchfork Austin, selvage beard reprehenderit ea ugh."
-              )
-            ]),
-            _vm._v(" "),
-            _c("h3", [
-              _vm._v(
-                "When, while the lovely valley teems with vapour around me, and the meridian sun strikes."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _c("img", {
-                staticClass: "pull-left",
-                attrs: {
-                  src: "/assets/images/news/news-details/news-details2.jpg",
-                  alt: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Pitchfork kitsch plaid forage aliquip, sustainable taxidermy deserunt health goth stumptown cred VHS butcher. Mixtape fap Intelligentsia small batch placeat labore, bitters swag chia Echo Park. Four loko aliquip id, delectus beard Bushwick bespoke Blue Bottle eu keytar veniam ethical High Life pour-over."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Art party photo booth deserunt exercitation plaid squid. Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby chic. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby Velit non seitan, tilde art party minim Thundercats viral.  Farm-to-table selfies labore, leggings cupidatat sunt taxidermy umami fanny pack typewriter hoodie art party voluptate cardigan banjo. Listicle paleo, drinking vinegar sint direct trade vegan 3 wolf moon."
-              )
-            ]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("Farm-to-table selfies labore leggings:")]),
-            _vm._v(" "),
-            _c("ul", [
-              _c("li", [_vm._v("Plaid fashion axe semiotics skateboard")]),
+        _c("p", [
+          _vm._v(
+            "Art party photo booth deserunt exercitation plaid squid. Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby chic. Pop-up occaecat taxidermy street art, tattooed beard literally duis photo booth Thundercats shabby Velit non seitan, tilde art party minim Thundercats viral. Farm-to-table selfies labore, leggings cupidatat sunt taxidermy umami fanny pack typewriter hoodie art party voluptate cardigan banjo. Listicle paleo, drinking vinegar sint direct trade vegan 3 wolf moon."
+          )
+        ]),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Farm-to-table selfies labore leggings:")]),
+        _vm._v(" "),
+        _c("ul", [
+          _c("li", [_vm._v("Plaid fashion axe semiotics skateboard")]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("Mixtape fap Intelligentsia small batch placeat labore")
+          ]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Gleams steal into the inner sanctuary grow")]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Like these sweet mornings of spring which")])
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "High Life tempor retro Truffaut. Tofu mixtape twee, assumenda quinoa flexitarian aesthetic artisan vinyl pug. Chambray et Carles Thundercats cardigan actually, magna bicycle rights. Plaid fashion axe semiotics skateboard, try-hard food truck aesthetic biodiesel exercitation. Accusamus VHS Wes Anderson Banksy food truck vero."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tags-area clearfix" }, [
+        _c("div", { staticClass: "post-tags" }, [
+          _c("span", [_vm._v("Tags:")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#" } }, [_vm._v("# Food")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#" } }, [_vm._v("# Lifestyle")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#" } }, [_vm._v("# Travel")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "share-items clearfix" }, [
+        _c("ul", { staticClass: "post-social-icons unstyled" }, [
+          _c("li", { staticClass: "facebook" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fa fa-facebook" }),
               _vm._v(" "),
-              _c("li", [
-                _vm._v("Mixtape fap Intelligentsia small batch placeat labore")
-              ]),
-              _vm._v(" "),
-              _c("li", [_vm._v("Gleams steal into the inner sanctuary grow")]),
-              _vm._v(" "),
-              _c("li", [_vm._v("Like these sweet mornings of spring which")])
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "High Life tempor retro Truffaut. Tofu mixtape twee, assumenda quinoa flexitarian aesthetic artisan vinyl pug. Chambray et Carles Thundercats cardigan actually, magna bicycle rights. Plaid fashion axe semiotics skateboard, try-hard food truck aesthetic biodiesel exercitation. Accusamus VHS Wes Anderson Banksy food truck vero."
-              )
+              _c("span", { staticClass: "ts-social-title" }, [
+                _vm._v("Facebook")
+              ])
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "tags-area clearfix" }, [
-            _c("div", { staticClass: "post-tags" }, [
-              _c("span", [_vm._v("Tags:")]),
+          _c("li", { staticClass: "twitter" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fa fa-twitter" }),
               _vm._v(" "),
-              _c("a", { attrs: { href: "#" } }, [_vm._v("# Food")]),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "#" } }, [_vm._v("# Lifestyle")]),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "#" } }, [_vm._v("# Travel")])
+              _c("span", { staticClass: "ts-social-title" }, [
+                _vm._v("Twitter")
+              ])
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "share-items clearfix" }, [
-            _c("ul", { staticClass: "post-social-icons unstyled" }, [
-              _c("li", { staticClass: "facebook" }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-facebook" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "ts-social-title" }, [
-                    _vm._v("Facebook")
-                  ])
-                ])
-              ]),
+          _c("li", { staticClass: "gplus" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fa fa-google-plus" }),
               _vm._v(" "),
-              _c("li", { staticClass: "twitter" }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-twitter" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "ts-social-title" }, [
-                    _vm._v("Twitter")
-                  ])
-                ])
-              ]),
+              _c("span", { staticClass: "ts-social-title" }, [
+                _vm._v("Google +")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "pinterest" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fa fa-pinterest" }),
               _vm._v(" "),
-              _c("li", { staticClass: "gplus" }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-google-plus" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "ts-social-title" }, [
-                    _vm._v("Google +")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "pinterest" }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-pinterest" }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "ts-social-title" }, [
-                    _vm._v("Pinterest")
-                  ])
-                ])
+              _c("span", { staticClass: "ts-social-title" }, [
+                _vm._v("Pinterest")
               ])
             ])
           ])

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    public function cat(){
+        return $this->belongsTo(CategoryPost::class);
+    }
     public function category(){
         return $this->hasMany(CategoryPost::class);
         // return CategoryPost::where('post_id',$id)->get();

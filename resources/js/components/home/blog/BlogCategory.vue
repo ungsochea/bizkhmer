@@ -1,7 +1,7 @@
 <template>
   <div class="block category-listing color-blue">
     <h3 class="block-title">
-      <span>{{ this.category }}</span>
+      <span>{{ this.category.name }}</span>
     </h3>   
 
     <div class="row">

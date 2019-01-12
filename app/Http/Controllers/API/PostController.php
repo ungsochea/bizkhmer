@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Post;
 use App\Http\Resources\PostResource;
+use App\Http\Resources\PostDetailResource;
 
 class PostController extends Controller
 {
@@ -40,7 +41,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return Post::find($id);
+        $post=Post::findOrFail($id);
+        return new PostDetailResource($post);
     }
 
     /**
