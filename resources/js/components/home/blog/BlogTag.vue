@@ -1,7 +1,7 @@
 <template>
-  <div class="block category-listing color-blue">
+  <div class="block category-listing color-aqua">
     <h3 class="block-title">
-      <span>{{ this.category.name }}</span>
+      <span>{{ $route.params.slug }} </span>
     </h3>   
 
     <div class="row">
@@ -50,8 +50,7 @@
 export default {
     data(){
         return{
-            listPosts:{},
-            category:'Loading...',
+            listPosts:{},            
         }
     },
     created(){
@@ -62,17 +61,10 @@ export default {
         // '$route':'cat_title',
         '$route':'listposts'
     },
-    methods:{
-        cat_title(){
-            axios.get(`/api/category-name/${this.$route.params.slug}`)
-            .then(res=>this.category=res.data)
-        },
+    methods:{        
         listposts(){
-            axios.get(`/api/category/${this.$route.params.slug}`)
-            .then(res=>this.listPosts=res.data.data)
-
-             axios.get(`/api/category-name/${this.$route.params.slug}`)
-            .then(res=>this.category=res.data)
+            axios.get(`/api/tag/${this.$route.params.slug}`)
+            .then(res=>this.listPosts=res.data)             
         }
     }
 };
@@ -101,6 +93,10 @@ export default {
     color: #777777;
     font-style: normal;
 }
+/* .post-thumb {
+	min-height: 265px;
+} */
+
 /* .post-content>p{
   font-style: normal;
   color: #777777;

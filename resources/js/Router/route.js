@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 
 import AppCategory from '../components/home/AppCategory.vue'
+import AppTag from '../components/home/AppTag.vue'
 import AppNot from '../components/home/AppNot.vue'
 import AppFeaturedPost from '../components/home/AppFeaturedPost'
 import AppHome from '../components/home/AppHome'
@@ -18,7 +19,7 @@ const routes = [
     }},    
     // { path: '/category', component: AppCategory },    
     { path: '/category/:slug', component: AppCategory },    
-    { path: '/tag/:slug', component: AppCategory },    
+    { path: '/tag/:slug', component: AppTag },    
     { path: '/:category/:post', component: PostDetail },    
     { path: '*', component: AppNot },    
    

@@ -15,7 +15,7 @@ Vue.filter('myDate',function(publisher){
 })
 
 Vue.filter('dateNowKH',function(){
-    return moment().format('MMMM Do YYYY, h:mm:ss a'); // មករា ទី៩ ២០១៩, ៩:៤១:៤៩ ល្ងាច
+    return moment().locale('km').format('dddd, Do MMMM YYYY'); // មករា ទី៩ ២០១៩, ៩:៤១:៤៩ ល្ងាច
 })
 
 import Vue from 'vue'

@@ -16,6 +16,7 @@ class Tags extends Model
         ->join('posts','posts.id','tag_posts.post_id')
         ->select('tag_posts.*','posts.id','posts.excerpted','posts.title','posts.image','posts.published_at')
         ->where('tags.name',$name)
+        ->orderby('posts.published_at','DESC')
         ->get();
     }
    
