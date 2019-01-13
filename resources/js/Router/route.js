@@ -18,6 +18,7 @@ const routes = [
     }},    
     // { path: '/category', component: AppCategory },    
     { path: '/category/:slug', component: AppCategory },    
+    { path: '/tag/:slug', component: AppCategory },    
     { path: '/:category/:post', component: PostDetail },    
     { path: '*', component: AppNot },    
    

@@ -72247,6 +72247,9 @@ var routes = [{
   path: '/category/:slug',
   component: _components_home_AppCategory_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
+  path: '/tag/:slug',
+  component: _components_home_AppCategory_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+}, {
   path: '/:category/:post',
   component: _components_home_blog_PostDetail__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, {
