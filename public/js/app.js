@@ -2717,7 +2717,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SideBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideBar */ "./resources/js/components/home/blog/SideBar.vue");
-//
+/* harmony import */ var vue_nl2br__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-nl2br */ "./node_modules/vue-nl2br/dist/vue-nl2br.js");
+/* harmony import */ var vue_nl2br__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_nl2br__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2832,9 +2833,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    SideBar: _SideBar__WEBPACK_IMPORTED_MODULE_0__["default"]
+    SideBar: _SideBar__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Nl2br: vue_nl2br__WEBPACK_IMPORTED_MODULE_1___default.a
   },
   data: function data() {
     return {
@@ -2842,10 +2845,7 @@ __webpack_require__.r(__webpack_exports__);
         name: "",
         slug: ""
       },
-      post: {
-        title: "",
-        content: ""
-      }
+      post: {}
     };
   },
   created: function created() {
@@ -7514,7 +7514,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n.entry-content{\n  font-size: 14px;\n  font-family: 'Kantumruy', sans-serif;\n  line-height:24px;\n}\n", ""]);
+exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n.entry-content>p{\n  font-size: 14px;\n  font-family: 'Kantumruy', sans-serif;\n  line-height:24px;\n}\n.post-tags>a{\n    border: 1px solid #cecccc;\n    color: #333333;\n    display: inline-block;\n    font-size: 12px !important;\n    line-height: 12px;\n    margin: 0 5px 9px 0;\n    padding: 9px 15px 9px;\n    transition: all 300ms ease-in-out 0s;\n    -webkit-transition: all 300ms ease-in-out 0s;\n    text-decoration: none;\n}\n", ""]);
 
 // exports
 
@@ -57783,8 +57783,6 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "post-meta" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
                   _c("span", { staticClass: "post-date" }, [
                     _c("i", { staticClass: "fa fa-clock-o" }),
                     _vm._v(
@@ -57794,9 +57792,9 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _vm._m(1),
                   _vm._v(" "),
-                  _vm._m(3)
+                  _vm._m(2)
                 ])
               ]),
               _vm._v(" "),
@@ -57814,15 +57812,40 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "post-content-area" }, [
-                _c("div", { staticClass: "entry-content" }, [
-                  _c("span", {
-                    domProps: { innerHTML: _vm._s("" + _vm.post.content) }
-                  })
+                _c(
+                  "div",
+                  { staticClass: "entry-content" },
+                  [
+                    _c("nl2br", {
+                      attrs: { tag: "p", text: "" + _vm.post.content }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "tags-area clearfix" }, [
+                  _c(
+                    "div",
+                    { staticClass: "post-tags" },
+                    [
+                      _c("span", [_vm._v("Tags:")]),
+                      _vm._v(" "),
+                      _vm._l(_vm.post.tags, function(tags) {
+                        return _c(
+                          "router-link",
+                          {
+                            key: tags.id,
+                            attrs: { to: "/tag/" + tags.tag_name, tag: "a" }
+                          },
+                          [_vm._v(_vm._s(tags.tag_name))]
+                        )
+                      })
+                    ],
+                    2
+                  )
                 ]),
                 _vm._v(" "),
-                _vm._m(4),
-                _vm._v(" "),
-                _vm._m(5)
+                _vm._m(3)
               ])
             ])
           ]),
@@ -57852,15 +57875,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "post-author" }, [
-      _vm._v("By\n                    "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("John Doe")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("span", { staticClass: "post-hits" }, [
       _c("i", { staticClass: "fa fa-eye" }),
       _vm._v(" 21\n                  ")
@@ -57875,22 +57889,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("a", { staticClass: "comments-link", attrs: { href: "#" } }, [
         _c("span", [_vm._v("01")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tags-area clearfix" }, [
-      _c("div", { staticClass: "post-tags" }, [
-        _c("span", [_vm._v("Tags:")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("# Food")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("# Lifestyle")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("# Travel")])
       ])
     ])
   },
@@ -58285,6 +58283,143 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/vue-nl2br/dist/vue-nl2br.js":
+/*!**************************************************!*\
+  !*** ./node_modules/vue-nl2br/dist/vue-nl2br.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  functional: true,
+  props: {
+    tag: {
+      type: String,
+      required: true
+    },
+    text: {
+      type: String,
+      required: true
+    }
+  },
+  render: function render(createElement, context) {
+    return createElement(context.props.tag, context.props.text.split('\n').reduce(function (accumulator, string) {
+      if (!Array.isArray(accumulator)) {
+        return [accumulator, createElement('br'), string];
+      }
+      return accumulator.concat([createElement('br'), string]);
+    }));
+  }
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Nl2br = __webpack_require__(0);
+
+var _Nl2br2 = _interopRequireDefault(_Nl2br);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Nl2br2.default;
+
+/***/ })
+/******/ ]);
+});
 
 /***/ }),
 
@@ -72139,7 +72274,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Router_route__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Router/route */ "./resources/js/Router/route.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_nl2br__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-nl2br */ "./node_modules/vue-nl2br/dist/vue-nl2br.js");
+/* harmony import */ var vue_nl2br__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_nl2br__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Router_route__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Router/route */ "./resources/js/Router/route.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -72149,12 +72288,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-Vue.filter('myDate', function (publisher) {
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.filter('myDate', function (publisher) {
   return moment__WEBPACK_IMPORTED_MODULE_0___default()(publisher).locale('km').format('LLLL');
 });
-Vue.filter('dateNowKH', function () {
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.filter('dateNowKH', function () {
   return moment__WEBPACK_IMPORTED_MODULE_0___default()().format('MMMM Do YYYY, h:mm:ss a'); // មករា ទី៩ ២០១៩, ៩:៤១:៤៩ ល្ងាច
 });
+
+
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('nl2br', vue_nl2br__WEBPACK_IMPORTED_MODULE_2___default.a);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -72165,8 +72307,8 @@ Vue.filter('dateNowKH', function () {
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('app-main', __webpack_require__(/*! ./components/home/AppMain.vue */ "./resources/js/components/home/AppMain.vue").default);
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('app-main', __webpack_require__(/*! ./components/home/AppMain.vue */ "./resources/js/components/home/AppMain.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -72174,9 +72316,9 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 
-var app = new Vue({
+var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
-  router: _Router_route__WEBPACK_IMPORTED_MODULE_1__["default"]
+  router: _Router_route__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),

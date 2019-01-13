@@ -17,8 +17,7 @@ class TagResource extends JsonResource
         // return parent::toArray($request);
         return[
             'post_id'=>$this->post_id,
-            'tag_id'=>$this->tag_id,
-            
+            'tag_id'=>$this->tag_id,            
         ];
     }
 }

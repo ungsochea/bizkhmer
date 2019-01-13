@@ -19,7 +19,8 @@ class PostDetailResource extends JsonResource
             'title'=>$this->title,
             'thumbnail'=>$this->image,
             'published'=>$this->published_at,
-            'category'=>$this->category(),
+            // 'category'=>$this->category(),
+            'tags'=>TagPostResource::collection($this->tags($this->id)),
             'content'=>$this->content,
         ];
     }

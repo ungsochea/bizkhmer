@@ -18,7 +18,10 @@ Vue.filter('dateNowKH',function(){
     return moment().format('MMMM Do YYYY, h:mm:ss a'); // មករា ទី៩ ២០១៩, ៩:៤១:៤៩ ល្ងាច
 })
 
-
+import Vue from 'vue'
+import Nl2br from 'vue-nl2br'
+ 
+Vue.component('nl2br', Nl2br)
 
 
 /**

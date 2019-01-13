@@ -8,9 +8,10 @@ class TagPost extends Model
 {
     // protected $tabale='tag_posts';
 
-    public function tagss(){
-        return $this->belongsTo('App\Model\Tags');
-        // return TagPost::where('post_id',$id)->get();
+    public function tags($id){
+        // return $this->hasMany(Tags::class);
+        // return TagPost::where('tag_id',$id)->first();
+        return Tags::find($id);
     }
  
 }

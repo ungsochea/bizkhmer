@@ -29,10 +29,7 @@
             <div class="single-post">
               <div class="post-title-area">                
                 <h2 class="post-title">{{post.title}}</h2>
-                <div class="post-meta">
-                  <span class="post-author">By
-                    <a href="#">John Doe</a>
-                  </span>
+                <div class="post-meta">                 
                   <span class="post-date">
                     <i class="fa fa-clock-o"></i> {{post.published|myDate }}
                   </span>
@@ -56,15 +53,17 @@
 
               <div class="post-content-area">
                 <div class="entry-content">
-                  <span v-html="`${post.content}`"></span>
+                  <!-- <span v-html="`${post.content}|nl2br`"></span>-->
+                  <nl2br tag="p" :text="`${post.content}`"></nl2br>
                  </div>
                 <!-- Entery content end -->
                 <div class="tags-area clearfix">
                   <div class="post-tags">
                     <span>Tags:</span>
-                    <a href="#"># Food</a>
-                    <a href="#"># Lifestyle</a>
-                    <a href="#"># Travel</a>
+                    <router-link :to="`/tag/${tags.tag_name}`" v-for="tags in post.tags" tag="a" :key="tags.id">{{tags.tag_name}}</router-link>
+                    <!-- <a v-for="tags in post.tags" :key="tags.id" href="/">{{tags.tag_name}}</a> -->
+                    <!-- <a href="#"># Lifestyle</a>
+                    <a href="#"># Travel</a> -->
                   </div>
                 </div>
                 <!-- Tags end -->
@@ -114,18 +113,16 @@
 
 <script>
 import SideBar from "./SideBar";
+import Nl2br from 'vue-nl2br'
 export default {
-  components: { SideBar },
+  components: { SideBar,Nl2br },
   data() {
     return {
       category: {
         name: "",
         slug: ""
       },
-      post: {
-        title: "",
-        content: ""
-      }
+      post: {},
     };
   },
   created() {
@@ -167,9 +164,21 @@ export default {
     padding: 3px 0 8px 0;
     margin: 0;
 }
-.entry-content{
+.entry-content>p{
   font-size: 14px;
   font-family: 'Kantumruy', sans-serif;
   line-height:24px;
+}
+.post-tags>a{
+    border: 1px solid #cecccc;
+    color: #333333;
+    display: inline-block;
+    font-size: 12px !important;
+    line-height: 12px;
+    margin: 0 5px 9px 0;
+    padding: 9px 15px 9px;
+    transition: all 300ms ease-in-out 0s;
+    -webkit-transition: all 300ms ease-in-out 0s;
+    text-decoration: none;
 }
 </style>
