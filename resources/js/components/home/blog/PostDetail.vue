@@ -46,8 +46,8 @@
               </div>
               <!-- Post title end -->
 			  <hr/>
-              <div class="post-media post-featured-image">
-                <img style="width: 100%;max-height: 400px;" :src="post.thumbnail||'default.jpg'" :alt="post.title" class="img-responsive" >
+              <div class="post-media post-featured-image" :style="{ backgroundImage: `url('${post.thumbnail}')` }">
+                <!-- <img style="width: 100%;max-height: 400px;" :src="post.thumbnail||'default.jpg'" :alt="post.title" class="img-responsive" > -->
                 <!-- src="/assets/images/news/lifestyle/food1.jpg"  -->
               </div>
 
@@ -180,5 +180,11 @@ export default {
     transition: all 300ms ease-in-out 0s;
     -webkit-transition: all 300ms ease-in-out 0s;
     text-decoration: none;
+}
+.post-featured-image{
+  min-height:400px;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative
 }
 </style>

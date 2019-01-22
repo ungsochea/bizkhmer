@@ -2530,11 +2530,59 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       listPosts: {},
-      category: 'Loading...'
+      category: "Loading...",
+      default_thumbnail: "kk/default.png"
     };
   },
   created: function created() {
@@ -2543,7 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     // '$route':'cat_title',
-    '$route': 'listposts'
+    $route: "listposts"
   },
   methods: {
     cat_title: function cat_title() {
@@ -7711,7 +7759,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.post-title.title-large{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 16px;\n    color: #333;\n    font-weight: 700;\n    line-height: 26px;\n}\n.post-title.title-large a:hover{\n    color: #ec0000;\n    text-decoration: none;\n}\n.post-date{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 10px;\n}\n.category-listing .post-block-style .post-content p{\n    font-family: 'Odor Mean Chey',sans-serif;\n    font-size: 13px;\n    color: #777777;\n    font-style: normal;\n}\n/* .post-content>p{\n  font-style: normal;\n  color: #777777;\n    font-size: 13px;\n} */\n", ""]);
+exports.push([module.i, "\n.post-title.title-large {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 16px;\n  color: #333;\n  font-weight: 700;\n  line-height: 26px;\n}\n.post-title.title-large a:hover {\n  color: #ec0000;\n  text-decoration: none;\n}\n.post-date {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 10px;\n}\n.category-listing .post-block-style .post-content p {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 13px;\n  color: #777777;\n  font-style: normal;\n}\n/* .post-content>p{\n  font-style: normal;\n  color: #777777;\n    font-size: 13px;\n} */\n", ""]);
 
 // exports
 
@@ -7787,7 +7835,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n.entry-content>p{\n  font-size: 14px;\n  font-family: 'Kantumruy', sans-serif;\n  line-height:24px;\n}\n.post-tags>a{\n    border: 1px solid #cecccc;\n    color: #333333;\n    display: inline-block;\n    font-size: 12px !important;\n    line-height: 12px;\n    margin: 0 5px 9px 0;\n    padding: 9px 15px 9px;\n    transition: all 300ms ease-in-out 0s;\n    -webkit-transition: all 300ms ease-in-out 0s;\n    text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "\n.breadcrumb {\n  color: #777;\n  margin: 0px 0 -10px 0;\n  padding: 0;\n  background: none;\n  list-style: none;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  font-family: \"Odor Mean Chey\", sans-serif;\n  font-size: 14px;\n}\n.single-post .post-title {\n\tfont-family: \"Odor Mean Chey\", sans-serif;\n    font-size: 24px;\n    line-height: 40px;\n    padding: 3px 0 8px 0;\n    margin: 0;\n}\n.entry-content>p{\n  font-size: 14px;\n  font-family: 'Kantumruy', sans-serif;\n  line-height:24px;\n}\n.post-tags>a{\n    border: 1px solid #cecccc;\n    color: #333333;\n    display: inline-block;\n    font-size: 12px !important;\n    line-height: 12px;\n    margin: 0 5px 9px 0;\n    padding: 9px 15px 9px;\n    transition: all 300ms ease-in-out 0s;\n    -webkit-transition: all 300ms ease-in-out 0s;\n    text-decoration: none;\n}\n.post-featured-image{\n  min-height:400px;\n  background-size: cover;\n  background-position: 50% 50%;\n  position: relative\n}\n", ""]);
 
 // exports
 
@@ -57670,91 +57718,93 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "top-bar hidden-xs", attrs: { id: "top-bar" } },
-    [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-8 col-sm-8 col-xs-12" }, [
-            _c("div", { staticClass: "ts-date" }, [
-              _c("i", { staticClass: "fa fa-calendar-check-o" }),
-              _vm._v(
-                " " + _vm._s(_vm._f("dateNowKH")(_vm.myDate)) + "\n\t\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _vm._m(0)
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
-        ])
-      ])
-    ]
-  )
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "unstyled top-nav" }, [
-      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("ទំព័រដើម")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("អំពីយើង")])]),
-      _vm._v(" "),
-      _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("ទាក់ទងមកយើង")])]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("ផ្សព្វផ្សាយជាមួយយើង")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "col-md-4 col-sm-4 col-xs-12 top-social text-right" },
+      { staticClass: "top-bar hidden-xs", attrs: { id: "top-bar" } },
       [
-        _c("ul", { staticClass: "unstyled" }, [
-          _c("li", [
-            _c("a", { attrs: { title: "Facebook", href: "#" } }, [
-              _c("span", { staticClass: "social-icon" }, [
-                _c("i", { staticClass: "fab fa-facebook-f" })
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-8 col-sm-8 col-xs-12" }, [
+              _c("div", { staticClass: "ts-date" }, [
+                _c("i", { staticClass: "fa fa-calendar-check-o" }),
+                _vm._v(" សៅរ៍, ទី១៩ មករា ២០១៩\n\t\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "unstyled top-nav" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "/" } }, [_vm._v("ទំព័រដើម")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("អំពីយើង")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("ទាក់ទងមកយើង")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("ផ្សព្វផ្សាយជាមួយយើង")
+                  ])
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("a", { attrs: { title: "Twitter", href: "#" } }, [
-              _c("span", { staticClass: "social-icon" }, [
-                _c("i", { staticClass: "fab fa-twitter" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { title: "Google+", href: "#" } }, [
-              _c("span", { staticClass: "social-icon" }, [
-                _c("i", { staticClass: "fab fa-google-plus" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { title: "Linkdin", href: "#" } }, [
-              _c("span", { staticClass: "social-icon" }, [
-                _c("i", { staticClass: "fab fa-linkedin" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { title: "Rss", href: "#" } }, [
-              _c("span", { staticClass: "social-icon" }, [
-                _c("i", { staticClass: "fa fa-rss" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { title: "Skype", href: "#" } }, [
-              _c("span", { staticClass: "social-icon" }, [
-                _c("i", { staticClass: "fab fa-skype" })
-              ])
-            ])
+            _c(
+              "div",
+              {
+                staticClass: "col-md-4 col-sm-4 col-xs-12 top-social text-right"
+              },
+              [
+                _c("ul", { staticClass: "unstyled" }, [
+                  _c("li", [
+                    _c("a", { attrs: { title: "Facebook", href: "#" } }, [
+                      _c("span", { staticClass: "social-icon" }, [
+                        _c("i", { staticClass: "fab fa-facebook-f" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { title: "Twitter", href: "#" } }, [
+                      _c("span", { staticClass: "social-icon" }, [
+                        _c("i", { staticClass: "fab fa-twitter" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { title: "Google+", href: "#" } }, [
+                      _c("span", { staticClass: "social-icon" }, [
+                        _c("i", { staticClass: "fab fa-google-plus" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { title: "Linkdin", href: "#" } }, [
+                      _c("span", { staticClass: "social-icon" }, [
+                        _c("i", { staticClass: "fab fa-linkedin" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { title: "Rss", href: "#" } }, [
+                      _c("span", { staticClass: "social-icon" }, [
+                        _c("i", { staticClass: "fa fa-rss" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { title: "Skype", href: "#" } }, [
+                      _c("span", { staticClass: "social-icon" }, [
+                        _c("i", { staticClass: "fab fa-skype" })
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            )
           ])
         ])
       ]
@@ -57790,63 +57840,157 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row" },
-      _vm._l(_vm.listPosts, function(post) {
-        return _c("div", { key: post.id, staticClass: "col-md-6 col-sm-6" }, [
-          _c("div", { staticClass: "post-block-style post-grid clearfix" }, [
-            _c(
-              "div",
-              { staticClass: "post-thumb" },
-              [
+      [
+        _vm._l(_vm.listPosts, function(post) {
+          return _c(
+            "div",
+            {
+              key: post.id,
+              staticClass: "post-block-style post-list clearfix"
+            },
+            [
+              _c("div", { staticClass: "col-md-5 col-sm-6" }, [
                 _c(
-                  "router-link",
-                  { attrs: { to: "/" + post.path, tag: "a" } },
+                  "div",
+                  { staticClass: "post-thumb thumb-float-style" },
                   [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      staticStyle: { "min-height": "265px" },
-                      attrs: {
-                        src: post.image || "default.jpg",
-                        alt: post.title
-                      }
-                    })
-                  ]
+                    _c(
+                      "router-link",
+                      { attrs: { to: "/" + post.path, tag: "a" } },
+                      [
+                        _c("img", {
+                          staticClass: "img-responsive",
+                          staticStyle: { "min-height": "265px" },
+                          attrs: {
+                            src: post.image || "/default.png",
+                            alt: post.title
+                          }
+                        })
+                      ]
+                    )
+                  ],
+                  1
                 )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "post-content" }, [
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-7 col-sm-6" }, [
+                _c("div", { staticClass: "post-content" }, [
+                  _c(
+                    "h2",
+                    { staticClass: "post-title title-large" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            tag: "a",
+                            to: "/" + post.path,
+                            title: post.title
+                          }
+                        },
+                        [_vm._v(_vm._s(post.title))]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "post-meta" }, [
+                    _vm._m(0, true),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "post-date" }, [
+                      _vm._v(_vm._s(_vm._f("myDate")(post.published)))
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(1, true)
+                  ]),
+                  _vm._v(" "),
+                  _c("p", {
+                    domProps: { innerHTML: _vm._s("" + post.excerpt) }
+                  })
+                ])
+              ])
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.listPosts, function(post) {
+          return _c("div", { key: post.id, staticClass: "col-md-6 col-sm-6" }, [
+            _c("div", { staticClass: "post-block-style post-grid clearfix" }, [
               _c(
-                "h2",
-                { staticClass: "post-title title-large" },
+                "div",
+                { staticClass: "post-thumb" },
                 [
                   _c(
                     "router-link",
-                    { attrs: { to: "/" + post.path, title: post.title } },
-                    [_vm._v(_vm._s(post.title))]
+                    { attrs: { to: "/" + post.path, tag: "a" } },
+                    [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        staticStyle: { "min-height": "265px" },
+                        attrs: {
+                          src: post.image || "/default.png",
+                          alt: post.title
+                        }
+                      })
+                    ]
                   )
                 ],
                 1
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "post-meta" }, [
-                _vm._m(0, true),
+              _c("div", { staticClass: "post-content" }, [
+                _c(
+                  "h2",
+                  { staticClass: "post-title title-large" },
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: "/" + post.path, title: post.title } },
+                      [_vm._v(_vm._s(post.title))]
+                    )
+                  ],
+                  1
+                ),
                 _vm._v(" "),
-                _c("span", { staticClass: "post-date" }, [
-                  _vm._v(_vm._s(_vm._f("myDate")(post.published)) + " ")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("p", { domProps: { innerHTML: _vm._s("" + post.excerpt) } })
+                _c("div", { staticClass: "post-meta" }, [
+                  _vm._m(2, true),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "post-date" }, [
+                    _vm._v(_vm._s(_vm._f("myDate")(post.published)))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", { domProps: { innerHTML: _vm._s("" + post.excerpt) } })
+              ])
             ])
           ])
-        ])
-      }),
-      0
+        })
+      ],
+      2
     )
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "post-author" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("John Doe")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "post-comment pull-right" }, [
+      _c("i", { staticClass: "fa fa-comments-o" }),
+      _vm._v(" "),
+      _c("a", { staticClass: "comments-link", attrs: { href: "#" } }, [
+        _c("span", [_vm._v("03")])
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -57956,7 +58100,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("p", { domProps: { innerHTML: _vm._s("" + post.excerpt) } })
+              _c("p", { domProps: { innerHTML: _vm._s("" + post.excerpted) } })
             ])
           ])
         ])
@@ -58426,16 +58570,10 @@ var render = function() {
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _c("div", { staticClass: "post-media post-featured-image" }, [
-                _c("img", {
-                  staticClass: "img-responsive",
-                  staticStyle: { width: "100%", "max-height": "400px" },
-                  attrs: {
-                    src: _vm.post.thumbnail || "default.jpg",
-                    alt: _vm.post.title
-                  }
-                })
-              ]),
+              _c("div", {
+                staticClass: "post-media post-featured-image",
+                style: { backgroundImage: "url('" + _vm.post.thumbnail + "')" }
+              }),
               _vm._v(" "),
               _c("div", { staticClass: "post-content-area" }, [
                 _c(

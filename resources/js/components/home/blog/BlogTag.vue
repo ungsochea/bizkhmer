@@ -32,7 +32,7 @@
                 </a>
               </span> -->
             </div>
-            <p v-html="`${post.excerpt}`"></p>
+            <p v-html="`${post.excerpted}`"></p>
           </div>
           <!-- Post content end -->
         </div>

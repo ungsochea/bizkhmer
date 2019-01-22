@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-8 col-xs-12">
 					<div class="ts-date">
-						<i class="fa fa-calendar-check-o"></i> {{myDate|dateNowKH}}
+						<i class="fa fa-calendar-check-o"></i> សៅរ៍, ទី១៩ មករា ២០១៩
 					</div>
 					<ul class="unstyled top-nav">
 						<li><a href="/">ទំព័រដើម</a></li>

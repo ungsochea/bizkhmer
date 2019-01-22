@@ -12,4 +12,7 @@ class HomeController extends Controller
         return Post::trending();
         // return Post::select('id','title')->latest()->limit(5)->get();
     }
+    public function top_post(){
+        
+    }
 }
